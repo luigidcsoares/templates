@@ -14,31 +14,26 @@
 %%% along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 \begin{tikzpicture}[
-    remember picture,
+    remember picture, 
     overlay,
     shift = {([xshift = \tikzxshift, yshift = \tikzyshift] \tikzorigin)},
-    font=\Large
 ]
-    \node (a) at (-2cm, 2cm) {$a$};
-    \node (b) at (2cm, 2cm)  {$b$};
+    \node[
+        shape = rectangle, thick, draw = white,rounded corners,
+        inner sep=8pt
+    ]
+    (system) at (0, 0) {System};
     
-    \node (alpha) at (-2cm, -2cm) {$\alpha$};
-    
-    \node [color = darkred!83] (beta) at (2cm, -2cm) {$\bm{\beta}$};
+    \node[left = 1.5cm of system]  (input)  {X};
+    \node[right = 1.5cm of system] (output) {Y};
         
-    \draw [-Latex, thick] (a) -- (b);
-    
-    \draw [-Latex, thick, color = darkred!83]
-        (alpha) -- (beta);
+    \node[below = 1cm of system, align=center] 
+        (time)
+        {\only<+->{\alert<., .(3)>{Time}} \\
+         \only<+->{\alert<.>{Cache}} \\
+         \only<+->{\alert<.>{...}}};
         
-    \draw [thick, dotted, shorten >= .1cm, shorten <= .1cm]
-        (a) -- (alpha)
-        node [midway, left] {$\approx$};
-        
-    \draw [
-        thick, dotted, shorten >= .1cm,
-        shorten <= .1cm, color = darkred!83
-    ]   
-        (b) -- (beta)
-        node [midway, right, color = darkred!83] {$\bm{\approx}$};
+    \draw[-latex, shorten >= 2pt] (input) -- (system);
+    \draw[-latex, shorten >= 2pt] (system) -- (output);
+    \only<+(-3)->\draw[-latex, shorten >= 2pt] (system) -- (time);
 \end{tikzpicture}

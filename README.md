@@ -1,3 +1,5 @@
 # Templates for Presentations
 
-- `saori-beamertheme`: a beamer template with purple background (hence the name saori &ndash; saint seiya)
+- `beamer/saori`: a beamer template with purple background (hence the name saori &ndash; saint seiya)
+- `beamer/ufmg`: light theme based on UFMG colors (black & red)
+  - **FIXME: blocks**

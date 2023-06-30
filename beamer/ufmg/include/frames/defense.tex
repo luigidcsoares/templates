@@ -13,15 +13,14 @@
 %%% You should have received a copy of the GNU General Public License
 %%% along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-\mode<presentation>
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%% Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setbeamerfont{title}{size=\huge}
-\setbeamerfont{subtitle}{size=\large}
-\setbeamerfont{footline}{size=\scriptsize}
-\setbeamerfont{item projected}{size=\scriptsize}
-\setbeamerfont{alerted text}{series=\bf}
-
-\mode<all>
+\begin{frame}{Defense Strategy}
+\begin{definition}[Constant-Time Programming]<2->
+    A program is said to implement a constant-time policy if
+    \only<3->{its memory accesses}
+    \only<4->{and control flow}
+    \only<5->{do not depend on secret information.}
+    \only<6->{In other words, the sequence of instructions
+    and memory accesses must be the same regardless
+    of the secret inputs.}
+\end{definition}
+\end{frame}
